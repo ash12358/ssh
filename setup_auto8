@@ -1,0 +1,23 @@
+#! /bin/bash
+pip2 install shadowsocks
+
+cd /drive/My\ Drive/ssh/!rm /etc/ssh/sshd_config
+
+cp sshd_config /etc/ssh/
+cp ssh_config /etc/ssh/
+service ssh start
+cp jupyter_notebook_config.py /root/.jupyter/
+echo -e '111111\n111111' | passwd
+chmod +x Sakura_frpc_linux_amd64
+
+
+cp shadowsocks.json /etc/
+rm /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
+cp openssl.py /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/
+
+echo -e '\n\n' | ssserver -c /etc/shadowsocks.json &
+
+echo -e '\n\n' | python2 sunny.py --clientid=aafb9cead61c5526 &
+
+echo -e 'ash12358\n12358a\n30\n\n\n' | ./Sakura_frpc_linux_amd64 &
+

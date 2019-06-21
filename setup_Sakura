@@ -1,0 +1,29 @@
+#! /bin/bash
+
+
+rm /etc/ssh/sshd_config
+cp sshd_config /etc/ssh/
+cp ssh_config /etc/ssh/
+service ssh start
+
+echo -e '111111\n111111' | passwd
+
+pip2 install shadowsocks
+cp shadowsocks.json /etc/
+rm /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
+cp openssl.py /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/
+
+ssserver -c /etc/shadowsocks.json &
+
+echo "115.238.185.30 frp.tcotp.cn" >> /etc/hosts
+
+chmod +x Sakura_frpc_linux_amd64
+
+echo -e 'ash12358\n12358a\n30' | nohup ./Sakura_frpc_linux_amd64
+while [[ $? -eq 1 ]]
+do
+	echo 'failed'
+	sleep 5s
+	echo -e 'ash12358\n12358a\n30' | nohup ./Sakura_frpc_linux_amd64
+done
+echo 'success'
