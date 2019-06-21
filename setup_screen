@@ -1,9 +1,0 @@
-#! /bin/bash
-apt install screen
-
-screen_name=$"my_screen"
-screen -dmS $screen_name
-
-cmd=$"./setup_Sakura";
-screen -x -S $screen_name -p 0 -X stuff "$cmd"
-screen -x -S $screen_name -p 0 -X stuff $'\n'
