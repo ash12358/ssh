@@ -1,8 +1,9 @@
 #! /bin/bash
+echo "115.238.185.30 frp.tcotp.cn" >> /etc/hosts
 wget https://cdn.tcotp.cn:4443/client/Sakura_frpc_linux_amd64.tar.gz
 tar -xzvf Sakura_frpc_linux_amd64.tar.gz
 
-echo "115.238.185.30 frp.tcotp.cn" >> /etc/hosts
+
 
 chmod +x Sakura_frpc_linux_amd64
 
