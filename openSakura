@@ -4,7 +4,10 @@ wget https://cdn.tcotp.cn:4443/client/Sakura_frpc_linux_amd64.tar.gz
 tar -xzvf Sakura_frpc_linux_amd64.tar.gz
 
 
-
+# 30 洛杉矶 
+# 38 新加坡
+# 39 蒙特利尔
+# 45 美国纽约
 chmod +x Sakura_frpc_linux_amd64
 
 echo -e 'ash12358\n12358a\n30' | nohup ./Sakura_frpc_linux_amd64 &
