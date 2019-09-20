@@ -10,11 +10,11 @@ tar -xzvf Sakura_frpc_linux_amd64.tar.gz
 # 45 美国纽约
 chmod +x Sakura_frpc_linux_amd64
 
-echo -e 'ash12358\n12358a\n45' | nohup ./Sakura_frpc_linux_amd64 &
+echo -e 'ash12358\n12358a\n38' | nohup ./Sakura_frpc_linux_amd64 &
 while [[ $? -eq 1 ]]
 do
 	echo 'open Sakura failed'
 	sleep 5s
-	echo -e 'ash12358\n12358a\n45' | nohup ./Sakura_frpc_linux_amd64 &
+	echo -e 'ash12358\n12358a\n38' | nohup ./Sakura_frpc_linux_amd64 &
 done
 echo 'open Sakura success'
